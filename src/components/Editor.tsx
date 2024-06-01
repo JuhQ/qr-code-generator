@@ -47,7 +47,7 @@ const Editor = () => {
 	const [logoPaddingStyle, setLogoPaddingStyle] = useState<"square" | "circle">(
 		"square",
 	);
-	const [qrStyle, setQrStyle] = useState<QRStyles>("squares");
+	const [qrStyle, setQrStyle] = useState<string>("squares");
 	const [qrCodeName, setQrCodeName] = useState("");
 
 	const form = useForm({
@@ -69,7 +69,7 @@ const Editor = () => {
 			setQuietZone(values.quietZone);
 			setLogoWidth(values.logoWidth);
 			setLogoHeight(values.logoHeight);
-			setQrStyle(values.qrStyle as QRStyles);
+			setQrStyle(values.qrStyle);
 			setQrCodeName(values.qrCodeName);
 		},
 	});
@@ -99,7 +99,7 @@ const Editor = () => {
 						logoWidth={logoWidth}
 						logoHeight={logoHeight}
 						logoPaddingStyle={logoPaddingStyle}
-						qrStyle={qrStyle}
+						qrStyle={qrStyle as QRStyles}
 						ref={qrRef}
 					/>
 					<Button
