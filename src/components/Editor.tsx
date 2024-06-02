@@ -193,10 +193,10 @@ const Editor = () => {
 								<TextInput
 									size="md"
 									style={{ maxWidth: "10rem", marginTop: "1rem" }}
-									placeholder="Background color"
-									value={backgroundColor}
+									placeholder="Foreground color"
+									value={foregroundColor}
 									onChange={(event) =>
-										setBackgroundColor(event.currentTarget.value)
+										setForegroundColor(event.currentTarget.value)
 									}
 								/>
 							</Grid.Col>
