@@ -119,6 +119,7 @@ const Editor = () => {
 						<Grid.Col key={label}>
 							{type === "number" ? (
 								<NumberInput
+									size="md"
 									label={label}
 									placeholder={label}
 									key={form.key(key)}
@@ -126,6 +127,7 @@ const Editor = () => {
 								/>
 							) : (
 								<TextInput
+									size="md"
 									label={label}
 									placeholder={label}
 									key={form.key(key)}
@@ -164,18 +166,38 @@ const Editor = () => {
 								<p>Background color</p>
 								<ColorPicker
 									size="lg"
+									value={backgroundColor}
 									onChange={setBackgroundColor}
 									format="hex"
 									swatches={switches}
+								/>
+								<TextInput
+									size="md"
+									style={{ maxWidth: "10rem", marginTop: "1rem" }}
+									placeholder="Background color"
+									value={backgroundColor}
+									onChange={(event) =>
+										setBackgroundColor(event.currentTarget.value)
+									}
 								/>
 							</Grid.Col>
 							<Grid.Col>
 								<p>Foreground color</p>
 								<ColorPicker
 									size="lg"
+									value={foregroundColor}
 									onChange={setForegroundColor}
 									format="hex"
 									swatches={switches}
+								/>
+								<TextInput
+									size="md"
+									style={{ maxWidth: "10rem", marginTop: "1rem" }}
+									placeholder="Background color"
+									value={backgroundColor}
+									onChange={(event) =>
+										setBackgroundColor(event.currentTarget.value)
+									}
 								/>
 							</Grid.Col>
 						</SimpleGrid>
