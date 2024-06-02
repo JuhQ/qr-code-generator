@@ -117,8 +117,8 @@ const Editor = () => {
 				<Grid gutter="md">
 					{valuesToEdit.map(({ label, key, type }) => (
 						<Grid.Col key={label}>
-							{type === "number" ? (
-								<NumberInput
+							{type === "text" ? (
+								<TextInput
 									size="md"
 									label={label}
 									placeholder={label}
@@ -126,7 +126,7 @@ const Editor = () => {
 									{...form.getInputProps(key)}
 								/>
 							) : (
-								<TextInput
+								<NumberInput
 									size="md"
 									label={label}
 									placeholder={label}

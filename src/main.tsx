@@ -8,24 +8,26 @@ import CafeAva from "./CafeAva";
 import Editor from "./components/Editor";
 import Root from "./routes/root";
 
-const router = createHashRouter([
-	{
-		path: "/",
-		element: <Root />,
-		children: [
-			{
-				path: "/",
-				element: <Editor />,
-			},
-			{
-				path: "/ava",
-				element: <CafeAva />,
-			},
-		],
-	}
-],
+const router = createHashRouter(
+	[
+		{
+			path: "/",
+			element: <Root />,
+			children: [
+				{
+					path: "/",
+					element: <Editor />,
+				},
+				{
+					path: "/ava",
+					element: <CafeAva />,
+				},
+			],
+		},
+	],
 
-{basename: "/"});
+	{ basename: "/" },
+);
 
 const theme = createTheme({
 	/** Put your mantine theme override here */
