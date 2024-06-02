@@ -13,6 +13,8 @@ import { CheckboxCard } from "./CheckboxCard";
 import { DropFiles } from "./DropFiles";
 import classes from "./GradientSegmentedControl.module.css";
 
+type QRStyles = "squares" | "dots" | "fluid" | undefined;
+
 const switches = [
 	"#2e2e2e",
 	"#868e96",
@@ -30,7 +32,19 @@ const switches = [
 	"#fd7e14",
 ];
 
-type QRStyles = "squares" | "dots" | "fluid" | undefined;
+const valuesToEdit = [
+	{ label: "Value", key: "value", type: "text" },
+	{ label: "Size", key: "size" },
+	{ label: "Logo Padding", key: "logoPadding" },
+	{ label: "Logo Width", key: "logoWidth" },
+	{ label: "Logo Height", key: "logoHeight" },
+	{ label: "Margin", key: "quietZone" },
+	{
+		label: "QR Code name for download purposes",
+		key: "qrCodeName",
+		type: "text",
+	},
+];
 
 const Editor = () => {
 	const qrRef = useRef<QRCode | null>(null);
@@ -73,16 +87,6 @@ const Editor = () => {
 			setQrCodeName(values.qrCodeName);
 		},
 	});
-
-	const valuesToEdit = [
-		{ label: "Value", key: "value" },
-		{ label: "Size", key: "size", type: "number" },
-		{ label: "Logo Padding", key: "logoPadding", type: "number" },
-		{ label: "Logo Width", key: "logoWidth", type: "number" },
-		{ label: "Logo Height", key: "logoHeight", type: "number" },
-		{ label: "Margin", key: "quietZone", type: "number" },
-		{ label: "QR Code name for download purposes", key: "qrCodeName" },
-	];
 
 	return (
 		<Container fluid>

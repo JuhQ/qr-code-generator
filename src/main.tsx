@@ -8,22 +8,27 @@ import CafeAva from "./CafeAva";
 import Editor from "./components/Editor";
 import Root from "./routes/root";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			path: "/",
+			element: <Root />,
+			children: [
+				{
+					path: "/",
+					element: <Editor />,
+				},
+				{
+					path: "/ava",
+					element: <CafeAva />,
+				},
+			],
+		},
+	],
 	{
-		path: "/",
-		element: <Root />,
-		children: [
-			{
-				path: "/",
-				element: <Editor />,
-			},
-			{
-				path: "/ava",
-				element: <CafeAva />,
-			},
-		],
+		basename: "/qr-code-generator",
 	},
-]);
+);
 
 const theme = createTheme({
 	/** Put your mantine theme override here */
