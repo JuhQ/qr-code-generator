@@ -22,8 +22,10 @@ const router = createHashRouter([
 				element: <CafeAva />,
 			},
 		],
-	},
-]);
+	}
+],
+
+{basename: "/"});
 
 const theme = createTheme({
 	/** Put your mantine theme override here */
