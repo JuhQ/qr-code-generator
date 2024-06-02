@@ -33,7 +33,7 @@ const switches = [
 ];
 
 const valuesToEdit = [
-	{ label: "Value", key: "value", type: "text" },
+	{ label: "Value (URL)", key: "value", type: "text" },
 	{ label: "Size", key: "size" },
 	{ label: "Logo Padding", key: "logoPadding" },
 	{ label: "Logo Width", key: "logoWidth" },

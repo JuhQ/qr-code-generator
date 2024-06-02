@@ -3,12 +3,12 @@ import "@mantine/core/styles.css";
 import "@mantine/dropzone/styles.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import CafeAva from "./CafeAva";
 import Editor from "./components/Editor";
 import Root from "./routes/root";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
 	[
 		{
 			path: "/",
@@ -25,9 +25,6 @@ const router = createBrowserRouter(
 			],
 		},
 	],
-	{
-		basename: "/qr-code-generator",
-	},
 );
 
 const theme = createTheme({
